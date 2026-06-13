@@ -31,8 +31,6 @@ programs.zsh = {
     export PATH="$HOME/.local/bin:$PATH"
   '';
   shellAliases = {
-    fastfetch = "ff";
-    neofetch = "ff";
     waydroid-stop = "waydroid session stop && sudo systemctl stop waydroid-container";
     waydroid-launch = "sudo systemctl start waydroid-container && waydroid session start & sleep 8 && WAYLAND_DISPLAY=wayland-0 waydroid show-full-ui";
     waydroid-ui-nvidia = "__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia WAYLAND_DISPLAY=wayland-0 waydroid show-full-ui";
