@@ -475,6 +475,8 @@
     unrar
     yazi
     xfce.thunar
+    ascii-image-converter
+
 
     # --- MULTIMÉDIA ---
     mpv
