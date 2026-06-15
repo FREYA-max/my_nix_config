@@ -262,7 +262,8 @@
   services.displayManager.gdm.wayland    = true;
   services.desktopManager.plasma6.enable = true;  # KDE
   services.desktopManager.gnome.enable   = true;
-
+  
+  programs.niri.enable = true;
   # programs.hyprland.enable = true;
   # xdg.portal = {
   #   enable       = true;
