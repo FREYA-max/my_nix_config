@@ -189,6 +189,7 @@
     enable32Bit = true;
   };
 
+
   services.xserver.videoDrivers = [ "nvidia" ];
 
   services.xserver.desktopManager.gnome.extraGSettingsOverrides = ''
@@ -215,6 +216,7 @@
 
   # 🔥 PRIME (GPU hybride AMD + NVIDIA)
   hardware.nvidia.prime = {
+    #sync.enable = true;
     offload = {
       enable           = true;
       enableOffloadCmd = true;
@@ -263,7 +265,7 @@
   services.desktopManager.plasma6.enable = true;  # KDE
   services.desktopManager.gnome.enable   = true;
   
-  programs.niri.enable = true;
+ # programs.niri.enable = true;
   # programs.hyprland.enable = true;
   # xdg.portal = {
   #   enable       = true;
@@ -310,7 +312,7 @@
   environment.variables = {
     __NV_PRIME_RENDER_OFFLOAD = "1";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    VK_ICD_FILENAMES          = "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.json";
+    VK_ICD_FILENAMES          = "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.x86_64.json";
   };
 
   programs.adb.enable           = true;
@@ -427,7 +429,7 @@
     jq
     imagemagick
     kew
-
+    protonup-ng
     # --- DÉVELOPPEMENT ---
     git
     gnumake
