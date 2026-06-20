@@ -44,7 +44,7 @@
   users.users.godfist = {
     isNormalUser    = true;
     description     = "godfist";
-    extraGroups     = [ "networkmanager" "wheel" "video" "adbusers" "libvirtd" "wireshark" "render" ];
+    extraGroups     = [ "networkmanager" "wheel" "video" "adbusers" "libvirtd" "wireshark" "render"  "input" "uinput"];
     packages        = with pkgs; [ ];
     useDefaultShell = true;
     shell           = pkgs.zsh;
@@ -110,6 +110,7 @@
     "nvidia_modeset"
     "nvidia_uvm"
     "nvidia_drm"
+    "uinput"
   ];
 
   boot.kernel.sysctl = {
@@ -274,8 +275,9 @@
   #   ];
   # };
 
+  hardware.xpadneo.enable = true;
+  services.inputplumber.enable = true;
   environment.pathsToLink = [ "/share/gsettings-schemas" ];
-
   # ===========================================================================
   # POLICES DE CARACTÈRES
   # ===========================================================================
@@ -346,10 +348,13 @@
     disableWhileTyping = true;
   };
 
-  services.logind.settings.Login = {
-    HandlePowerKey = "ignore";
-  };
-
+ services.logind.settings.Login = {
+  HandlePowerKey = "ignore";
+  HandleLidSwitch = "suspend";     # ou "ignore" si tu veux que KDE gère
+  HandleLidSwitchDocked = "ignore";
+  IdleAction = "ignore";
+  IdleActionSec = "0";
+};
   # ===========================================================================
   # VIRTUALISATION
   # ===========================================================================
@@ -430,6 +435,9 @@
     imagemagick
     kew
     protonup-ng
+    antimicrox
+    lutris
+    game-devices-udev-rules
     # --- DÉVELOPPEMENT ---
     git
     gnumake
