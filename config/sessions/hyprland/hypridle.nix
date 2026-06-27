@@ -1,6 +1,6 @@
 {
   services.hypridle = {
-    enable = true;
+   # enable = true;
     settings = {
       general = {
         lock_cmd = "quickshell -p ~/.config/hypr/scripts/quickshell/Lock.qml";

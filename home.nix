@@ -110,12 +110,12 @@ programs.zsh = {
 
 
 
-  wayland.windowManager.hyprland = {
-  enable = true;
-  settings = {
-    input = {
-      kb_layout = "us";
-    };
-  };
-};
+ # wayland.windowManager.hyprland = {
+ # enable = true;
+ # settings = {
+ #   input = {
+  #    kb_layout = "us";
+   # };
+ # };
+#};
 }

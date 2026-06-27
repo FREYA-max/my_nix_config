@@ -261,19 +261,11 @@
     variant = "";
   };
 
-  services.displayManager.gdm.enable     = true;
-  services.displayManager.gdm.wayland    = true;
-  services.desktopManager.plasma6.enable = true;  # KDE
-  services.desktopManager.gnome.enable   = true;
-  
- # programs.niri.enable = true;
-  # programs.hyprland.enable = true;
-  # xdg.portal = {
-  #   enable       = true;
-  #   extraPortals = with pkgs; [
-  #     xdg-desktop-portal-gtk
-  #   ];
-  # };
+  services.displayManager.sddm.enable         = true;
+  services.displayManager.sddm.wayland.enable = true;
+  services.desktopManager.plasma6.enable      = true;  # garde KDE
+  programs.hyprland.enable                    = true;  # ajoute Hyprland
+
 
   hardware.xpadneo.enable = true;
   services.inputplumber.enable = true;
